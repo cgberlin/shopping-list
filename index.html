@@ -18,33 +18,61 @@
 			<hr>
 			
 			<div class ='buttons'>
-				<input type ="text" class="item-to-add" value ="Please enter an item.">
+				<input type ="text" class="item-to-add" value ="Enter an item.">
+				<input type="text" class="estimated-price" value="Price.">
 				<button class="add-item-button">Add Item</button>
 				<button class="reset-list">Reset</button>
 			</div>
 
 			<div class="main">
-				<div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p>carrots</p><button class="remove-item">Remove</button></div>
-				<div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p>Peas</p><button class="remove-item">Remove</button></div>
-				<div class="list-item"><p class="checkbox"><input type="checkbox" checked>Got item</p><p style="text-decoration:line-through;">Apples</p><button class="remove-item">Remove</button></div>
-				<div class="list-item"><p class="checkbox"><input type="checkbox" checked>Got item</p><p style="text-decoration:line-through;">Potatos</p><button class="remove-item">Remove</button></div>
+				<div class="list-item">
+					<p class="checkbox">
+						<input type="checkbox">Got item
+					</p>
+					<p>carrots | $5
+					</p>
+					<button class="remove-item">Remove
+					</button>
+				</div>
+				<div class="list-item">
+					<p class="checkbox">
+						<input type="checkbox">Got item
+					</p>
+					<p>Peas | $5
+					</p>
+					<button class="remove-item">Remove
+					</button>
+				</div>
+				<div class="list-item">
+					<p class="checkbox">
+						<input type="checkbox" checked>Got item
+					</p>
+					<p style="text-decoration:line-through; color: transparent;
+  						 text-shadow: 0 0 5px rgba(0,0,0,0.5);">Apples | $5
+					</p>
+					<button class="remove-item">Remove
+					</button>
+				</div>
+				<div class="list-item">
+					<p class="checkbox">
+						<input type="checkbox" checked>Got item
+					</p>
+					<p style="text-decoration:line-through; color: transparent;
+  						 text-shadow: 0 0 5px rgba(0,0,0,0.5);">Potatos | $5
+					</p>
+					<button class="remove-item">Remove
+					</button>
+				</div>
 			</div>
 
 
 
+			<div class="price-total">
+				<p>Total Price: $20</p>
+			</div>
 
 
-
-
-
-
-
-
-
-
-
-
-		<script src="https://code.jquery.com/jquery.min.js"></script>
-		<script src="./js/app.js"></script>
+			<script src="https://code.jquery.com/jquery.min.js"></script>
+			<script src="./js/app.js"></script>
 		</body>
 	</html>
