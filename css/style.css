@@ -1,6 +1,4 @@
-div, .list-item{
-	border:1px solid chocolate;
-}
+
 
 
 /*remove above when done */
@@ -10,7 +8,9 @@ div, .list-item{
 	-moz-osx-font-smoothing: grayscale;
  }
 
-
+ul {
+	list-style:none;
+}
 
 .title {
 	display:flex;
