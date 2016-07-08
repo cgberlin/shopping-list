@@ -10,6 +10,7 @@
 
 ul {
 	list-style:none;
+	width:auto;
 }
 
 .title {
@@ -132,11 +133,15 @@ h3, .main, .buttons {
 	.buttons {
 		width:90%;
 	}
+
+	.list-item {
+		width:80%;
+	}
 }
 
 @media only screen and (max-width:580px) {
 	.list-item {
-		width:90%;
+		width:95%;
 	}
 }
 
