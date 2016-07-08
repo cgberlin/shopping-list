@@ -8,6 +8,10 @@ $(document).ready(function(){
 		alert(addItemValue + price);
 	});
 
+	$('.reset-list').click(function(){
+		$('li').remove();
+
+	});
 
 
 
