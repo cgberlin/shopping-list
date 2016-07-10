@@ -14,7 +14,7 @@ $(document).ready(function(){
 		$('li').remove();
 	});
 
-	$('input[type=checkbox]').on('change', function() {
+	$('.main').on('change', 'input[type=checkbox]', function() {
 		if ($(this).prop('checked')==true){
 			$(this).parent('.checkbox').siblings('.item-name').css('text-decoration', 'line-through').css('color', 'transparent').css('text-shadow', '0 0 5px rgba(0,0,0,0.5)');
 						}
