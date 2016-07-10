@@ -14,81 +14,22 @@
 			<div class = "title">
 				<h1> Shopping List </h1>
 			</div>
-
 			<hr>
-			
 			<div class ='buttons'>
 				<p class="item-to-add-text">Enter Item</p>
 				<p class="estimated-price-text">Price</p>
 				<input type ="textbox" class="item-to-add" value ="">
-				<input type="number" min="0" step='1' class="estimated-price" value="0">
+				<input type="number" min="0" max="100" step='1' class="estimated-price" value="">
 				<button class="add-item-button">Add</button>
 				<button class="reset-list">Reset</button>
-
 			</div>
-
 			<div class="main">
-			<ul>
-				<li>
-				<div class="list-item">
-					<p class="checkbox">
-						<input type="checkbox">Got item
-					</p>
-					<p class='item-name'>carrots
-					</p>
-					<button class="remove-item">Remove
-					</button>
-					<p>$5</p>
-				</div>
-				</li>
-				<li>
-				<div class="list-item">
-					<p class="checkbox">
-						<input type="checkbox">Got item
-					</p>
-					<p class='item-name'>Peas
-					</p>
-					<button class="remove-item">Remove
-					</button>
-					<p>$5</p>
-				</div>
-				</li>
-				<li>
-				<div class="list-item">
-					<p class="checkbox">
-						<input type="checkbox" checked>Got item
-					</p>
-					<p class ='item-name'style="text-decoration:line-through; color: transparent;
-  						 text-shadow: 0 0 5px rgba(0,0,0,0.5);">Apples 
-					</p>
-					<button class="remove-item">Remove
-					</button>
-					<p>$5</p>
-				</div>
-				</li>
-				<li>
-				<div class="list-item">
-					<p class="checkbox">
-						<input type="checkbox" checked>Got item
-					</p>
-					<p class='item-name' style="text-decoration:line-through; color: transparent;
-  						 text-shadow: 0 0 5px rgba(0,0,0,0.5);">Potatos 
-					</p>
-					<button class="remove-item">Remove
-					</button>
-					<p>$5</p>
-				</div>
-				</li>
+				<ul>
 				</ul>
 			</div>
-
-
-
 			<div class="price-total">
-				<p>Total Price: $</p>
+				<p></p>
 			</div>
-
-
 			<script src="https://code.jquery.com/jquery.min.js"></script>
 			<script src="./js/app.js"></script>
 		</body>

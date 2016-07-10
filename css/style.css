@@ -73,6 +73,8 @@ ul {
 	margin:auto;
 }
 
+
+
 button {
 	border:none;
 	border-radius:4px;
@@ -141,6 +143,7 @@ h3, .main, .buttons {
 	.list-item {
 		width:80%;
 	}
+	
 }
 
 @media only screen and (max-width:580px) {
