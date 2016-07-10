@@ -129,6 +129,7 @@ h3, .main, .buttons {
 	font-family: 'Lobster', cursive;
 	justify-content: center;
 	border-top:1px solid LightGray;
+	align-items: center;
 }
 
 @media only screen and (max-width:1000px) {

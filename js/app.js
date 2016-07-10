@@ -3,9 +3,16 @@ $(document).ready(function(){
 	var totalPrice = 0
 
 	$('.main').on('click', '.remove-item', function(){
+		var priceRemove = $(this).siblings('.the-price').text();
+		var removePrice = parseInt(priceRemove, 10);
+		totalPrice -= removePrice;
+		$('.price-total > p').replaceWith('<p>Total Price: $'+totalPrice+'</p>');
 		var removeThis = $(this).closest('.list-item');
-		$(removeThis).fadeOut(1500);
-		$(removeThis).delay(1500).remove();
+		$(removeThis).fadeOut(1000, function(){
+			$(this).remove();
+		});
+		
+		
 	});
 	$('.add-item-button').click(function(){
 		if ($('.item-to-add').val() == 0) {
@@ -15,7 +22,7 @@ $(document).ready(function(){
 		var addedItem = $('.item-to-add').val();
 		var price = parseInt($('.estimated-price').val(),10);
 		totalPrice += price;
-		var listString = '<li><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">$'+price+'</p></div></li>'
+		var listString = '<li><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">'+price+'</p></div></li>'
 		$('ul').append(listString);
 		$('.list-item:last').hide().fadeIn(1500);
 		$('.price-total > p').replaceWith('<p>Total Price: $'+totalPrice+'</p>');
