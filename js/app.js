@@ -22,7 +22,12 @@ $(document).ready(function(){
 	});
 
 	$('input[type=checkbox]').on('change', function() {
-		$(this).parent('.checkbox').siblings('.item-name').css('text-decoration', 'line-through').css('color', 'transparent').css('text-shadow', '0 0 5px rgba(0,0,0,0.5)');
+		if ($(this).prop('checked')==true){
+			$(this).parent('.checkbox').siblings('.item-name').css('text-decoration', 'line-through').css('color', 'transparent').css('text-shadow', '0 0 5px rgba(0,0,0,0.5)');
+						}
+		else { 
+			$(this).parent('.checkbox').siblings('.item-name').css('text-decoration', 'none').css('color', 'black').css('text-shadow', 'none');
+		}
 	});
 
 	
