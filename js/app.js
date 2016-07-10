@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$(removeThis).delay(1500).remove();
 	});
 	$('.add-item-button').click(function(){
+		if ($('.item-to-add').val() == 0) {
+			alert('Please enter an item');
+		}
+		else{
 		var addedItem = $('.item-to-add').val();
 		var price = parseInt($('.estimated-price').val(),10);
 		totalPrice += price;
@@ -15,7 +19,9 @@ $(document).ready(function(){
 		$('ul').append(listString);
 		$('.list-item:last').hide().fadeIn(1500);
 		$('.price-total > p').replaceWith('<p>Total Price: $'+totalPrice+'</p>');
+	}
 			});
+
 
 	$('.reset-list').click(function(){
 		$('li').fadeOut(1000, function(){
