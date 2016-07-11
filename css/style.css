@@ -91,7 +91,6 @@ button:hover {
 .list-item-header p {
 	width:25%;
 	text-align: center;
-	border:1px solid chocolate;
 }
 .checkbox {
 	font-size:1rem;
