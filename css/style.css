@@ -1,54 +1,46 @@
-
-/*remove above when done */
-
 * { 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
  }
-
 ul {
 	list-style:none;
 	width:auto;
 }
-
 .title {
 	display:flex;
 	justify-content: center;
 	align-content: center;
 }
-
 .title > h1 {
 	font-size:5rem;
 	font-family: 'Kaushan Script', cursive;
 	font-weight:500;
 	text-shadow: -2px 2px DarkGray;
-
-
 }
-
-.buttons {
+.buttons, .main, .price-total, .list-item, .list-item-header {
+	font-family: 'Lobster', cursive;
+	font-size:2rem;
 	display:flex;
+	margin:0 auto;
+}
+.buttons {
 	align-content:center;
 	align-items: center;
 	justify-content: center;
 	width:80%;
 	height:10rem;
-	margin:0 auto;
-	font-size:2rem;
-	font-family: 'Lobster', cursive;
 	flex-wrap:wrap;
 }
-
 .item-to-add-text, .estimated-price-text {
 	width:40%;
 	margin-bottom:-.3rem;
-
-
 }
-
 .reset-list {
 	float:right;
 	height:25%;
+}
+
+.reset-list, .buttons > input, .add-item-button {
 	margin:auto;
 }
 
@@ -62,107 +54,86 @@ ul {
 
 .buttons > input {
 	height:22%;
-	margin:auto;
 	border-style:1px solid #4d4d4d;
 	border-radius:4px;
 }
-
 .add-item-button {
 	width:30%;
 	height:25%;
-	margin:auto;
 }
-
-
-
 button {
 	border:none;
 	border-radius:4px;
 	background-color:#8c8c8c;
 	box-shadow: inset 0 0 0 1px #27496d;
 	background-image: linear-gradient(top, #6496c8, #346392);
-	text-shadow: -2px 2px DarkGray;
-
-	
+	text-shadow: -2px 2px DarkGray;	
 }
-
 button:hover {
 	cursor:pointer;
 	background-color:#4d4d4d;
 	box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
 }
-
-
-
 .main {
-	display:flex;
 	flex-direction: column;
 	width:90%;
 	height:auto;
-	margin:0 auto;
-	font-size:2rem;
-	font-family: 'Lobster', cursive;
 }
-
-.list-item {
-	display:flex;
+.list-item, .list-item-header {
 	justify-content: space-between;
 	align-items: center;
 	width:62%;
-	margin:0 auto;
 	padding-top:1rem;
 }
-
+.list-item-header {
+	width:90%;
+}
+.list-item-header p {
+	width:25%;
+	text-align: center;
+	border:1px solid chocolate;
+}
 .checkbox {
 	font-size:1rem;
 	font-weight:400;
 }
-
 h3, .main, .buttons {
 	font-size:2rem;
 }
-
 .price-total {
-	display:flex;
-	margin:0 auto;
-	font-size:2rem;
-	font-family: 'Lobster', cursive;
 	justify-content: center;
 	border-top:1px solid LightGray;
 	align-items: center;
 }
-
 @media only screen and (max-width:1000px) {
 	.item-to-add {
 		width:60%;
 	}
-
 	.buttons {
 		width:90%;
 	}
-
 	.list-item {
 		width:80%;
 	}
-	
 }
-
 @media only screen and (max-width:580px) {
-	.list-item {
+	.list-item, .list-item-header {
 		width:95%;
+		font-size:1rem;
+	}
+	.remove-item {
+		width:20%;
+		font-size:.8rem;
 	}
 }
-
 @media only screen and (max-width:510px) {
 	.buttons {
 		font-size:1.5rem;
 		flex-wrap:wrap;
 	}
-
 	.title > h1 {
 		font-size:3rem;
 	}
-
 	.main {
 		font-size:1.5rem;
 	}
