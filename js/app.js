@@ -11,9 +11,10 @@ $(document).ready(function(){
 		$('.list-item:last').hide().fadeIn(1500);
 		replaceTotal();
 	}
+	var mainContent = $('.main');
 	var itemToAdd = $('.item-to-add');
 	var totalPrice = 0;
-	$('.main').on('click', '.remove-item', function(){
+	$(mainContent).on('click', '.remove-item', function(){
 		var priceRemove = $(this).siblings('.the-price').text();
 		var removePrice = parseInt(priceRemove, 10);
 		totalPrice -= removePrice;
@@ -33,7 +34,7 @@ $(document).ready(function(){
 			if (price == 0){
 			totalPrice = totalPrice;
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">'
-							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">None</p></div></li>';
+							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">0</p></div></li>';
 			addString(listString);
 			}
 			else {
@@ -51,7 +52,7 @@ $(document).ready(function(){
 			replaceTotal();
 		});
 	});
-	$('.main').on('change', 'input[type=checkbox]', function() {
+	$(mainContent).on('change', 'input[type=checkbox]', function() {
 		if ($(this).prop('checked')==true){
 			$(this).parent('.checkbox').siblings('.item-name')
 			.css('text-decoration', 'line-through')
