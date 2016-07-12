@@ -5,21 +5,23 @@ $(document).ready(function(){
 	var loadedItems = [];
 		if (localStorage.getItem("itemsSaved") !== null) {
 			var loadedItems = JSON.parse(localStorage.getItem("itemsSaved"));
+			totalPrice = parseInt(localStorage.getItem('savedPrice'), 10);
+			replaceTotal();
 			$.each(loadedItems, function(index, value)  {
     		var listString = value;
     		addString(listString);
-    		var totalPriceString = localStorage.getItem('priceSaved');
-    		$('.price-total > p').replaceWith(totalPriceString);
 	});
 	}
 	function replaceTotal() {
 		var totalPriceString = '<p>Total Price: $'+totalPrice+'</p>';
 		$('.price-total > p').replaceWith(totalPriceString);
-		localStorage.setItem('priceSaved', totalPriceString);
+	}
+	function addTotalPrice() {
+		localStorage.setItem('savedPrice', totalPrice);
 	}
 	function removeThis() {
 		$(this).remove();
-	}
+	}7
 	function addString(listString) {
 		$('ul').append(listString);
 		$('.list-item:last').hide().fadeIn(1500);
@@ -33,6 +35,7 @@ $(document).ready(function(){
 		var priceRemove = $(this).siblings('.the-price').text();
 		var removePrice = parseInt(priceRemove, 10);
 		totalPrice -= removePrice;
+		addTotalPrice();
 		replaceTotal();
 		var removeClosestItem = $(this).closest('.list-item');
 		$(removeClosestItem).fadeOut(1000, function(){
@@ -48,6 +51,7 @@ $(document).ready(function(){
 			var price = parseInt($('.estimated-price').val(),10);
 			if (price == 0){
 			totalPrice = totalPrice;
+			addTotalPrice();
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">'
 							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">0</p></div></li>';
 			addString(listString);
@@ -55,6 +59,7 @@ $(document).ready(function(){
 			}
 			else {
 			totalPrice += price;
+			addTotalPrice();
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' 
 							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">'+price+'</p></div></li>'
 			addString(listString);
