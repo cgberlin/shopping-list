@@ -1,13 +1,21 @@
 $(document).ready(function(){
+	var mainContent = $('.main');
+	var itemToAdd = $('.item-to-add');
+	var totalPrice = 0;
+	var loadedItems = [];
 		if (localStorage.getItem("itemsSaved") !== null) {
 			var loadedItems = JSON.parse(localStorage.getItem("itemsSaved"));
 			$.each(loadedItems, function(index, value)  {
     		var listString = value;
     		addString(listString);
+    		var totalPriceString = localStorage.getItem('priceSaved');
+    		$('.price-total > p').replaceWith(totalPriceString);
 	});
 	}
 	function replaceTotal() {
-		$('.price-total > p').replaceWith('<p>Total Price: $'+totalPrice+'</p>');
+		var totalPriceString = '<p>Total Price: $'+totalPrice+'</p>';
+		$('.price-total > p').replaceWith(totalPriceString);
+		localStorage.setItem('priceSaved', totalPriceString);
 	}
 	function removeThis() {
 		$(this).remove();
@@ -18,13 +26,9 @@ $(document).ready(function(){
 		replaceTotal();
 	}
 	function storeTheItems(listString){
-		itemsToStore.push(listString);
-		localStorage.setItem("itemsSaved", JSON.stringify(itemsToStore));
+		loadedItems.push(listString);
+		localStorage.setItem("itemsSaved", JSON.stringify(loadedItems));
 	}
-	var mainContent = $('.main');
-	var itemToAdd = $('.item-to-add');
-	var totalPrice = 0;
-	var itemsToStore = [];
 	$(mainContent).on('click', '.remove-item', function(){
 		var priceRemove = $(this).siblings('.the-price').text();
 		var removePrice = parseInt(priceRemove, 10);
