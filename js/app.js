@@ -1,5 +1,11 @@
 $(document).ready(function(){
-
+		if (localStorage.getItem("itemsSaved") !== null) {
+			var loadedItems = JSON.parse(localStorage.getItem("itemsSaved"));
+			$.each(loadedItems, function(index, value)  {
+    		var listString = value;
+    		addString(listString);
+	});
+	}
 	function replaceTotal() {
 		$('.price-total > p').replaceWith('<p>Total Price: $'+totalPrice+'</p>');
 	}
@@ -11,9 +17,14 @@ $(document).ready(function(){
 		$('.list-item:last').hide().fadeIn(1500);
 		replaceTotal();
 	}
+	function storeTheItems(listString){
+		itemsToStore.push(listString);
+		localStorage.setItem("itemsSaved", JSON.stringify(itemsToStore));
+	}
 	var mainContent = $('.main');
 	var itemToAdd = $('.item-to-add');
 	var totalPrice = 0;
+	var itemsToStore = [];
 	$(mainContent).on('click', '.remove-item', function(){
 		var priceRemove = $(this).siblings('.the-price').text();
 		var removePrice = parseInt(priceRemove, 10);
@@ -36,12 +47,14 @@ $(document).ready(function(){
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">'
 							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">0</p></div></li>';
 			addString(listString);
+			storeTheItems(listString);
 			}
 			else {
 			totalPrice += price;
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' 
 							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">'+price+'</p></div></li>'
 			addString(listString);
+			storeTheItems(listString);
 		}
 	}
 			});
@@ -50,6 +63,7 @@ $(document).ready(function(){
 			removeThis();
 			totalPrice = 0;
 			replaceTotal();
+			window.localStorage.clear();
 		});
 	});
 	$(mainContent).on('change', 'input[type=checkbox]', function() {
