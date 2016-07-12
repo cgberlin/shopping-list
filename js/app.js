@@ -32,12 +32,14 @@ $(document).ready(function(){
 			var price = parseInt($('.estimated-price').val(),10);
 			if (price == 0){
 			totalPrice = totalPrice;
-			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price" style="display:none;">0</p></div></li>';
+			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">'
+							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">None</p></div></li>';
 			addString(listString);
 			}
 			else {
 			totalPrice += price;
-			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">'+price+'</p></div></li>'
+			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">' 
+							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">'+price+'</p></div></li>'
 			addString(listString);
 		}
 	}

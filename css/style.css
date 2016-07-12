@@ -39,19 +39,15 @@ ul {
 	float:right;
 	height:25%;
 }
-
 .reset-list, .buttons > input, .add-item-button {
 	margin:auto;
 }
-
 .buttons > .item-to-add {
 	width:40%;
 }
-
 .buttons > .estimated-price {
 	width:14%;
 }
-
 .buttons > input {
 	height:22%;
 	border-style:1px solid #4d4d4d;
@@ -82,13 +78,13 @@ button:hover {
 .list-item, .list-item-header {
 	justify-content: space-between;
 	align-items: center;
-	width:62%;
+	width:90%;
 	padding-top:1rem;
 }
 .list-item-header {
 	width:90%;
 }
-.list-item-header p {
+.list-item-header p, .list-item p, .list-item button {
 	width:25%;
 	text-align: center;
 }
@@ -133,7 +129,7 @@ h3, .main, .buttons {
 	.title > h1 {
 		font-size:3rem;
 	}
-	.main {
+	.main, .item-to-add {
 		font-size:1.5rem;
 	}
 	.checkbox {
