@@ -1,6 +1,8 @@
 * { 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	color:white;
+	text-shadow: -2px 2px black;
  }
 ul {
 	list-style:none;
@@ -39,7 +41,10 @@ ul {
 .reset-list {
 	float:right;
 	height:25%;
-
+}
+.item-to-add, .estimated-price {
+	color:black;
+	text-shadow:none;
 }
 .reset-list, .buttons > input, .add-item-button {
 	margin:auto;
@@ -106,9 +111,6 @@ h3, .main, .buttons {
 	background-image:url('http://i.imgur.com/0ZVU31b.jpg');
 	display:cover;
 	background-repeat:no-repeat;
-}
-li {
-	background-color:white;
 }
 .add-item-button, .reset-list, .title, .price-total, .remove-item, .price-total, .title, .buttons p {
 	color:white;

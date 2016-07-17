@@ -20,9 +20,22 @@ $(document).ready(function(){
 		localStorage.setItem('savedPrice', totalPrice);
 	}
 	function removeThis() {
+		var idToRemove = $(this).attr('id');
+		var itemsInArray = JSON.parse(localStorage.getItem("itemsSaved"));
+		if (itemsInArray.length != 0) {
+			for (var i=0; i<itemsInArray.length; i++){
+				if(itemsInArray[i].id == idToRemove) {
+					itemsInArray.splice(i, 1);
+					localStorage.setItem("itemsSaved", JSON.stringify(itemsInArray));
+				}
+			}
+		}
 		$(this).remove();
-	}7
+	}
 	function addString(listString) {
+		$('.items-added li').attr('id', function(i) {
+  		 return 'item'+(i+1);
+  		});
 		$('ul').append(listString);
 		$('.list-item:last').hide().fadeIn(1500);
 		replaceTotal();
@@ -54,6 +67,7 @@ $(document).ready(function(){
 			addTotalPrice();
 			var listString = '<li class="inserted-row"><div class="list-item"><p class="checkbox"><input type="checkbox">Got item</p><p class="item-name">'
 							 + addedItem +'</p><button class="remove-item">Remove</button><p class="the-price">0</p></div></li>';
+			
 			addString(listString);
 			storeTheItems(listString);
 			}
